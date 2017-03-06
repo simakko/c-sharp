@@ -6,41 +6,42 @@ using System.Threading.Tasks;
 
 namespace BankOOP
 {
-    class Customer
+    public class Customer
     {
-        public string FirstName;
-        public string SurName;
-        public string AccountNumber;
+        private string _firstName;
+        private string _surName;
+        private string _accountNumber;
 
+        // static metodin arvoja voi kutsua ilman olion käyttämistä
 
         public Customer(string firstName, string surName, string accountNumber)
         {
-            FirstName = firstName;
-            SurName = surName;
-            AccountNumber = accountNumber;
+            _firstName = firstName;
+            _surName = surName;
+            _accountNumber = accountNumber;
         }
 
-        public string FirstName1
+        public string FirstName
         {
-            get { return FirstName; }
-            set { FirstName = value; }
+            get { return _firstName; }
+            set { _firstName = value; }
         }
 
-        public string SurName1
+        public string SurName
         {
-            get { return SurName; }
-            set { SurName = value; }
+            get { return _surName; }
+            set { _surName = value; }
         }
 
-        public string AccountNumber1
+        public string AccountNumber
         {
-            get { return AccountNumber; }
-            set { AccountNumber = value; }
+            get { return _accountNumber; }
+            set { _accountNumber = value; }
         }
 
         public override string ToString()
         {
-            return base.ToString();
+            return _firstName + " " +_surName+ "\t " + _accountNumber;
         }
     }
 }
