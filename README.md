@@ -1,1 +1,1 @@
-Here I have my c-sharp exercises made in E-Koodi training
+Here I have my C#-exercises made in E-Koodi training
