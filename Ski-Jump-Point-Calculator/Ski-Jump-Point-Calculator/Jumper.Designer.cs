@@ -28,19 +28,21 @@
         // </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel10 = new System.Windows.Forms.Panel();
             this.JumperDataGrid = new System.Windows.Forms.DataGridView();
             this.AddJumperButton = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.countryInput = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.ageInput = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.nameInput = new System.Windows.Forms.TextBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.colNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JumperDataGrid)).BeginInit();
             this.panel11.SuspendLayout();
@@ -50,34 +52,56 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel10.Controls.Add(this.panel1);
             this.panel10.Controls.Add(this.JumperDataGrid);
             this.panel10.Controls.Add(this.AddJumperButton);
             this.panel10.Controls.Add(this.label25);
             this.panel10.Controls.Add(this.countryInput);
-            this.panel10.Controls.Add(this.label24);
-            this.panel10.Controls.Add(this.ageInput);
             this.panel10.Controls.Add(this.label23);
             this.panel10.Controls.Add(this.nameInput);
             this.panel10.Controls.Add(this.panel11);
-            this.panel10.Location = new System.Drawing.Point(3, 8);
+            this.panel10.Location = new System.Drawing.Point(3, -1);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(740, 360);
             this.panel10.TabIndex = 39;
             // 
             // JumperDataGrid
             // 
+            this.JumperDataGrid.AllowUserToAddRows = false;
+            this.JumperDataGrid.AllowUserToDeleteRows = false;
             this.JumperDataGrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.JumperDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.JumperDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.JumperDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.JumperDataGrid.Location = new System.Drawing.Point(352, 117);
+            this.JumperDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colNumber,
+            this.colName,
+            this.colCountry});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.JumperDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
+            this.JumperDataGrid.GridColor = System.Drawing.Color.GhostWhite;
+            this.JumperDataGrid.Location = new System.Drawing.Point(352, 111);
             this.JumperDataGrid.Name = "JumperDataGrid";
-            this.JumperDataGrid.Size = new System.Drawing.Size(311, 146);
+            this.JumperDataGrid.ReadOnly = true;
+            this.JumperDataGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.JumperDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.JumperDataGrid.RowHeadersVisible = false;
+            this.JumperDataGrid.RowHeadersWidth = 20;
+            this.JumperDataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.JumperDataGrid.Size = new System.Drawing.Size(311, 136);
             this.JumperDataGrid.TabIndex = 43;
             // 
             // AddJumperButton
             // 
             this.AddJumperButton.Font = new System.Drawing.Font("OCR A Extended", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddJumperButton.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.AddJumperButton.Location = new System.Drawing.Point(73, 223);
+            this.AddJumperButton.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.AddJumperButton.Location = new System.Drawing.Point(73, 209);
             this.AddJumperButton.Name = "AddJumperButton";
             this.AddJumperButton.Size = new System.Drawing.Size(225, 40);
             this.AddJumperButton.TabIndex = 42;
@@ -90,7 +114,7 @@
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label25.Location = new System.Drawing.Point(91, 181);
+            this.label25.Location = new System.Drawing.Point(91, 162);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(67, 21);
             this.label25.TabIndex = 39;
@@ -98,35 +122,17 @@
             // 
             // countryInput
             // 
-            this.countryInput.Location = new System.Drawing.Point(160, 180);
+            this.countryInput.Location = new System.Drawing.Point(160, 161);
             this.countryInput.Name = "countryInput";
             this.countryInput.Size = new System.Drawing.Size(117, 20);
             this.countryInput.TabIndex = 38;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label24.Location = new System.Drawing.Point(92, 149);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(37, 21);
-            this.label24.TabIndex = 37;
-            this.label24.Text = "Age";
-            // 
-            // ageInput
-            // 
-            this.ageInput.Location = new System.Drawing.Point(160, 148);
-            this.ageInput.Name = "ageInput";
-            this.ageInput.Size = new System.Drawing.Size(40, 20);
-            this.ageInput.TabIndex = 36;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label23.Location = new System.Drawing.Point(91, 118);
+            this.label23.Location = new System.Drawing.Point(91, 133);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(52, 21);
             this.label23.TabIndex = 3;
@@ -134,10 +140,10 @@
             // 
             // nameInput
             // 
-            this.nameInput.Location = new System.Drawing.Point(160, 117);
+            this.nameInput.Location = new System.Drawing.Point(160, 132);
             this.nameInput.Name = "nameInput";
             this.nameInput.Size = new System.Drawing.Size(117, 20);
-            this.nameInput.TabIndex = 1;
+            this.nameInput.TabIndex = 2;
             // 
             // panel11
             // 
@@ -164,7 +170,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(45)))), ((int)(((byte)(150)))));
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(355, 9);
+            this.panel1.Location = new System.Drawing.Point(352, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(311, 100);
             this.panel1.TabIndex = 36;
@@ -181,11 +187,32 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Registered jumpers";
             // 
+            // colNumber
+            // 
+            this.colNumber.HeaderText = "Num";
+            this.colNumber.Name = "colNumber";
+            this.colNumber.ReadOnly = true;
+            this.colNumber.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colNumber.Width = 40;
+            // 
+            // colName
+            // 
+            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colName.HeaderText = "Name";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // colCountry
+            // 
+            this.colCountry.HeaderText = "Country";
+            this.colCountry.Name = "colCountry";
+            this.colCountry.ReadOnly = true;
+            // 
             // Jumper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel10);
             this.Name = "Jumper";
             this.Size = new System.Drawing.Size(740, 360);
@@ -206,14 +233,15 @@
         private System.Windows.Forms.Button AddJumperButton;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox countryInput;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox ageInput;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox nameInput;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView JumperDataGrid;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView JumperDataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCountry;
     }
 }

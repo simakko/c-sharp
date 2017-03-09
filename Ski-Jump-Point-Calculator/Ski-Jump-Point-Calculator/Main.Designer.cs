@@ -40,7 +40,7 @@
             // 
             // mainPanel
             // 
-            this.mainPanel.BackColor = System.Drawing.SystemColors.Window;
+            this.mainPanel.BackColor = System.Drawing.Color.MidnightBlue;
             this.mainPanel.Location = new System.Drawing.Point(-3, 66);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(740, 359);
@@ -62,6 +62,7 @@
             // btnResults
             // 
             this.btnResults.Font = new System.Drawing.Font("OCR A Extended", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResults.ForeColor = System.Drawing.Color.RoyalBlue;
             this.btnResults.Location = new System.Drawing.Point(597, 3);
             this.btnResults.Name = "btnResults";
             this.btnResults.Size = new System.Drawing.Size(136, 23);
@@ -73,6 +74,7 @@
             // btnPoints
             // 
             this.btnPoints.Font = new System.Drawing.Font("OCR A Extended", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPoints.ForeColor = System.Drawing.Color.RoyalBlue;
             this.btnPoints.Location = new System.Drawing.Point(455, 3);
             this.btnPoints.Name = "btnPoints";
             this.btnPoints.Size = new System.Drawing.Size(136, 23);
@@ -84,6 +86,7 @@
             // btnJumpers
             // 
             this.btnJumpers.Font = new System.Drawing.Font("OCR A Extended", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJumpers.ForeColor = System.Drawing.Color.RoyalBlue;
             this.btnJumpers.Location = new System.Drawing.Point(313, 3);
             this.btnJumpers.Name = "btnJumpers";
             this.btnJumpers.Size = new System.Drawing.Size(136, 23);

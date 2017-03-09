@@ -30,19 +30,29 @@ namespace Ski_Jump_Point_Calculator
             InitializeComponent();
 
         }
-        List<Main> jumpers = new List<Main>();
+        List<Main> jumperList = new List<Main>();
+
+        public List<Main> GiveName()
+        {
+            List<Main> jumpers = (from jumper in jumperList
+                                  orderby jumper.Contestant
+                                  select jumper).ToList();
+            return jumpers;
+        }
+
         private void AddJumperButton_Click(object sender, EventArgs e)
         {
             try
             {
+                int _number = jumperList.Count+1;
                 string _name = nameInput.Text;
-                int _age = int.Parse(ageInput.Text);
                 string _country = countryInput.Text;
-                jumpers.Add(new Main(_name, _age, _country));
-
-                var source = new BindingSource();
-                source.DataSource = jumpers;
-                JumperDataGrid.DataSource = source;
+                
+                jumperList.Add(new Main(_number, _name, _country));
+                string[] row = {_number.ToString(), _name, _country };
+                JumperDataGrid.Rows.Add(row);
+                nameInput.Clear();
+                countryInput.Clear();
             }
             catch (Exception exception)
             {

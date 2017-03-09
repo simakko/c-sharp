@@ -12,10 +12,10 @@ namespace Ski_Jump_Point_Calculator
 {
     public partial class Main : Form
     {
+
         public Main()
         {
             InitializeComponent();
-            Jumper.Instance.BringToFront();
         }
 
         private void btnJumpers_Click(object sender, EventArgs e)
@@ -34,15 +34,23 @@ namespace Ski_Jump_Point_Calculator
 
         private void btnPoints_Click(object sender, EventArgs e)
         {
-            if (!mainPanel.Controls.Contains(Points.Instance))
+            try
             {
-                mainPanel.Controls.Add(Points.Instance);
-                Points.Instance.Dock = DockStyle.Fill;
-                Points.Instance.BringToFront();
+                if (!mainPanel.Controls.Contains(Points.Instance))
+                {
+                    mainPanel.Controls.Add(Points.Instance);
+                    Points.Instance.Dock = DockStyle.Fill;
+                    Points.Instance.BringToFront();
+                }
+                else
+                {
+                    Points.Instance.BringToFront();
+                }
             }
-            else
+            catch (Exception exception)
             {
-                Points.Instance.BringToFront();
+                Console.WriteLine(exception);
+                throw;
             }
         }
 
@@ -59,33 +67,35 @@ namespace Ski_Jump_Point_Calculator
                 Result.Instance.BringToFront();
             }
         }
-
+        private int _number;
         private string _name;
-        private int _age;
         private string _country;
-        private int _points;
-        private int _jumpLength;
 
-        public Main(string name, int age, string country)
+
+        public Main(int number, string name, string country)
         {
             _name = name;
-            _age = age;
+            _number = number;
             _country = country;
         }
 
-        public string Name1
+        public string Contestant
         {
             get { return _name; }
+            set { _name = value; }
         }
 
-        public int Age
+        public int Number
         {
-            get { return _age; }
+            get { return _number; }
+            set { _number = value; }
         }
 
         public string Country
         {
             get { return _country; }
+            set { _country = value; }
         }
+
     }
 }
