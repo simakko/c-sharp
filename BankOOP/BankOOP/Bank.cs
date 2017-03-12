@@ -31,24 +31,24 @@ namespace BankOOP
         {          
             string stringBuilder = "";
 
-            for (int i = 0; i < 15; i++)
+            for (int i = 0; i < 16; i++)
             {
                 stringBuilder += _random.Next(1, 10).ToString();
             }
             return "FI" + stringBuilder;
         }
 
-        public List<Transactions> GetTransactions(string accountNumber)
+        public List<Transaction> GetTransactions(string accountNumber)
         {
             BankAccount customersAccount = _accounts.First(account => account.AccountNumber == accountNumber);
-            List<Transactions> transactions = customersAccount.GiveTransactions();
+            List<Transaction> transactions = customersAccount.GiveTransactions();
             return transactions;
         }
 
-        public List<Transactions> GetCertainTransactions(string accountNumber, DateTime beginDate, DateTime toDate)
+        public List<Transaction> GetCertainTransactions(string accountNumber, DateTime beginDate, DateTime toDate)
         {
             BankAccount customersAccount = _accounts.First(account => account.AccountNumber == accountNumber);
-            List<Transactions> certainTransactions = customersAccount.GiveCertainTransactions(beginDate, toDate);
+            List<Transaction> certainTransactions = customersAccount.GiveCertainTransactions(beginDate, toDate);
             return certainTransactions;
         }
 

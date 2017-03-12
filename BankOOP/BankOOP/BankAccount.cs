@@ -10,12 +10,12 @@ namespace BankOOP
     {
         private string _accountNumber;
         private decimal _accountBalance;
-        private List<Transactions> _transactions;
+        private List<Transaction> _transactions;
 
         public BankAccount(string accountNumber)
         {
             _accountNumber = accountNumber;
-            _transactions = new List<Transactions>(); //Luodaan uusi lista jokaiselle tilille
+            _transactions = new List<Transaction>(); //Luodaan uusi lista jokaiselle tilille
         }
 
         public string AccountNumber
@@ -27,19 +27,19 @@ namespace BankOOP
         public void AddTransaction(decimal sum, DateTime timeStamp) // Lisätään kaikki tilitapahtumat listaan
         {
             _accountBalance = _accountBalance + sum;
-            _transactions.Add(new Transactions(_accountBalance, sum, timeStamp));
+            _transactions.Add(new Transaction(_accountBalance, sum, timeStamp));
         }
 
-        public List<Transactions> GiveTransactions()
+        public List<Transaction> GiveTransactions()
         {
-            List<Transactions> transactions = (from transaction in _transactions orderby transaction.TimeStamp
+            List<Transaction> transactions = (from transaction in _transactions orderby transaction.TimeStamp
                                                select transaction).ToList();
             return transactions;
         }
 
-        public List<Transactions> GiveCertainTransactions(DateTime beginDate, DateTime toDate)
+        public List<Transaction> GiveCertainTransactions(DateTime beginDate, DateTime toDate)
         {
-            List<Transactions> certainTransactions = (from transaction in _transactions
+            List<Transaction> certainTransactions = (from transaction in _transactions
                                                       where transaction.TimeStamp >= beginDate
                                                       where transaction.TimeStamp <= toDate
                                                       orderby transaction.TimeStamp
