@@ -1,6 +1,6 @@
 ﻿namespace Ski_Jump_Point_Calculator
 {
-    partial class Main
+    partial class MainController
     {
         /// <summary>
         /// Required designer variable.

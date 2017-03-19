@@ -1,6 +1,6 @@
 ﻿namespace Ski_Jump_Point_Calculator
 {
-    partial class Points
+    partial class PointsController
     {
         /// <summary> 
         /// Required designer variable.
@@ -132,35 +132,45 @@
             this.stylePoints5.Location = new System.Drawing.Point(126, 211);
             this.stylePoints5.Name = "stylePoints5";
             this.stylePoints5.Size = new System.Drawing.Size(47, 20);
-            this.stylePoints5.TabIndex = 33;
+            this.stylePoints5.TabIndex = 14;
+            this.stylePoints5.Text = "0";
+            this.stylePoints5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // stylePoints4
             // 
             this.stylePoints4.Location = new System.Drawing.Point(126, 176);
             this.stylePoints4.Name = "stylePoints4";
             this.stylePoints4.Size = new System.Drawing.Size(47, 20);
-            this.stylePoints4.TabIndex = 32;
+            this.stylePoints4.TabIndex = 13;
+            this.stylePoints4.Text = "0";
+            this.stylePoints4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // stylePoints3
             // 
             this.stylePoints3.Location = new System.Drawing.Point(126, 141);
             this.stylePoints3.Name = "stylePoints3";
             this.stylePoints3.Size = new System.Drawing.Size(47, 20);
-            this.stylePoints3.TabIndex = 31;
+            this.stylePoints3.TabIndex = 12;
+            this.stylePoints3.Text = "0";
+            this.stylePoints3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // stylePoints2
             // 
             this.stylePoints2.Location = new System.Drawing.Point(126, 106);
             this.stylePoints2.Name = "stylePoints2";
             this.stylePoints2.Size = new System.Drawing.Size(47, 20);
-            this.stylePoints2.TabIndex = 30;
+            this.stylePoints2.TabIndex = 11;
+            this.stylePoints2.Text = "0";
+            this.stylePoints2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // stylePoints1
             // 
             this.stylePoints1.Location = new System.Drawing.Point(126, 71);
             this.stylePoints1.Name = "stylePoints1";
             this.stylePoints1.Size = new System.Drawing.Size(47, 20);
-            this.stylePoints1.TabIndex = 29;
+            this.stylePoints1.TabIndex = 10;
+            this.stylePoints1.Text = "0";
+            this.stylePoints1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label19
             // 
@@ -286,21 +296,27 @@
             this.windCheck5.Location = new System.Drawing.Point(141, 256);
             this.windCheck5.Name = "windCheck5";
             this.windCheck5.Size = new System.Drawing.Size(43, 20);
-            this.windCheck5.TabIndex = 39;
+            this.windCheck5.TabIndex = 9;
+            this.windCheck5.Text = "-0,5";
+            this.windCheck5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // windCheck4
             // 
             this.windCheck4.Location = new System.Drawing.Point(141, 221);
             this.windCheck4.Name = "windCheck4";
             this.windCheck4.Size = new System.Drawing.Size(43, 20);
-            this.windCheck4.TabIndex = 38;
+            this.windCheck4.TabIndex = 8;
+            this.windCheck4.Text = "-0,3";
+            this.windCheck4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // windCheck3
             // 
             this.windCheck3.Location = new System.Drawing.Point(141, 186);
             this.windCheck3.Name = "windCheck3";
             this.windCheck3.Size = new System.Drawing.Size(43, 20);
-            this.windCheck3.TabIndex = 37;
+            this.windCheck3.TabIndex = 7;
+            this.windCheck3.Text = "-0,1";
+            this.windCheck3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label11
             // 
@@ -319,14 +335,18 @@
             this.windCheck2.Location = new System.Drawing.Point(141, 151);
             this.windCheck2.Name = "windCheck2";
             this.windCheck2.Size = new System.Drawing.Size(43, 20);
-            this.windCheck2.TabIndex = 36;
+            this.windCheck2.TabIndex = 6;
+            this.windCheck2.Text = "0";
+            this.windCheck2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // windCheck1
             // 
             this.windCheck1.Location = new System.Drawing.Point(141, 116);
             this.windCheck1.Name = "windCheck1";
             this.windCheck1.Size = new System.Drawing.Size(43, 20);
-            this.windCheck1.TabIndex = 35;
+            this.windCheck1.TabIndex = 5;
+            this.windCheck1.Text = "-0,2";
+            this.windCheck1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label10
             // 
@@ -416,21 +436,27 @@
             this.criticalPoint.Location = new System.Drawing.Point(158, 71);
             this.criticalPoint.Name = "criticalPoint";
             this.criticalPoint.Size = new System.Drawing.Size(54, 20);
-            this.criticalPoint.TabIndex = 38;
+            this.criticalPoint.TabIndex = 2;
+            this.criticalPoint.Text = "116";
+            this.criticalPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // levelChange
             // 
             this.levelChange.Location = new System.Drawing.Point(158, 99);
             this.levelChange.Name = "levelChange";
             this.levelChange.Size = new System.Drawing.Size(54, 20);
-            this.levelChange.TabIndex = 36;
+            this.levelChange.TabIndex = 3;
+            this.levelChange.Text = "0";
+            this.levelChange.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // levelCompensation
             // 
             this.levelCompensation.Location = new System.Drawing.Point(158, 127);
             this.levelCompensation.Name = "levelCompensation";
             this.levelCompensation.Size = new System.Drawing.Size(54, 20);
-            this.levelCompensation.TabIndex = 1;
+            this.levelCompensation.TabIndex = 4;
+            this.levelCompensation.Text = "5";
+            this.levelCompensation.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
             // 
@@ -516,6 +542,7 @@
             this.jumpLength.Name = "jumpLength";
             this.jumpLength.Size = new System.Drawing.Size(54, 20);
             this.jumpLength.TabIndex = 1;
+            this.jumpLength.Text = "0";
             // 
             // nameComboBox
             // 
@@ -524,7 +551,7 @@
             this.nameComboBox.Name = "nameComboBox";
             this.nameComboBox.Size = new System.Drawing.Size(121, 21);
             this.nameComboBox.TabIndex = 0;
-            this.nameComboBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.nameComboBox_MouseDown);
+            this.nameComboBox.SelectedIndexChanged += new System.EventHandler(this.nameComboBox_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -557,12 +584,12 @@
             this.panel11.Size = new System.Drawing.Size(225, 56);
             this.panel11.TabIndex = 35;
             // 
-            // Points
+            // PointsController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
-            this.Name = "Points";
+            this.Name = "PointsController";
             this.Size = new System.Drawing.Size(740, 360);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

@@ -4,36 +4,38 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Data;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ski_Jump_Point_Calculator
 {
-    public partial class Points : UserControl
+    public partial class PointsController : UserControl
     {
-        private static Points _instance;
-
-        public static Points Instance
+        public static List<Jumper> JumperList { get; set; }
+        public static List<Result> ResultList { get; set; }
+        private static PointsController _instance;
+        public static PointsController Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new Points();
+                    _instance = new PointsController();
                 }
                 return _instance;
             }
         }
 
-        public Points()
+        public PointsController()
         {
             InitializeComponent();
         }
 
-        
-        private double _score;
         private int _number;
+        private double _score;
+        private double _jumpScore;
         private double _jumpLength;
         private double _criticalPoint;
         private double _levelCompensation;
@@ -51,26 +53,35 @@ namespace Ski_Jump_Point_Calculator
         private double _stylePoints3;
         private double _stylePoints4;
         private double _stylePoints5;
+        private bool _error;
 
-        public List<Main> GetNames()
+
+        public void NameListUpdate()
         {
-            Jumper points = new Jumper();
-            List<Main> names = points.GiveName();
-            return names;
+            nameComboBox.ResetText();
+            nameComboBox.Items.Clear();
+
+            foreach (var jumper in JumperList)
+            {
+                nameComboBox.Items.Add($"{jumper.Number} {jumper.Name} {jumper.Country.ToUpper()}");
+            }
         }
 
-        private void nameComboBox_MouseDown(object sender, MouseEventArgs e)
+        private void nameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var bindingSource1 = new BindingSource();
-            bindingSource1.DataSource = GetNames();
-            nameComboBox.DataSource = bindingSource1.DataSource;
-            nameComboBox.DisplayMember = Name;
-            MessageBox.Show(Name);
+            _number = nameComboBox.SelectedIndex + 1;
         }
 
         private void AddPointsButton_Click(object sender, EventArgs e)
         {
-            _number = int.Parse(nameComboBox.SelectedText);
+            CalculateScore();
+            NameListUpdate();
+        }
+
+        public void CalculateScore()
+        {
+            try
+            {
             _jumpLength = double.Parse(jumpLength.Text);
             _criticalPoint = double.Parse(criticalPoint.Text);
             _levelCompensation = double.Parse(levelCompensation.Text);
@@ -86,11 +97,43 @@ namespace Ski_Jump_Point_Calculator
             _stylePoints4 = double.Parse(stylePoints4.Text);
             _stylePoints5 = double.Parse(stylePoints5.Text);
 
-            _windCompensation = countWindEffect(_criticalPoint, _windChance1, _windChance2, _windChance3, _windChance4, _windChance5);
-            _score = countLengthScore(_jumpLength, _criticalPoint, _windCompensation);
-            _stylePoints = countStylePoints(_stylePoints1, _stylePoints2, _stylePoints3, _stylePoints4, _stylePoints5);
-            _platformCompensation = countPlatformCompensation(_criticalPoint, _platformChange, _levelCompensation);
+            if (nameComboBox.SelectedIndex == -1 || _jumpLength == 0 || _criticalPoint == 0 || _levelCompensation == 0)
+            {
+                MessageBox.Show("Please, fill in all jump specs!");
+            }
+            else
+            {
+                _windCompensation = countWindEffect(_criticalPoint, _windChance1, _windChance2, _windChance3,
+                    _windChance4, _windChance5);
+                _jumpScore = countLengthScore(_jumpLength, _criticalPoint, _windCompensation);
+                _stylePoints = countStylePoints(_stylePoints1, _stylePoints2, _stylePoints3, _stylePoints4,
+                    _stylePoints5);
+                _platformCompensation = countPlatformCompensation(_criticalPoint, _platformChange, _levelCompensation);
+                _score = _windCompensation + _jumpScore + _stylePoints + _platformCompensation;
 
+                if (_error != true)
+                {
+                    var thisJumper = JumperList.FirstOrDefault(x => x.Number == _number);
+
+                    var scoreExist = ResultList.FirstOrDefault(x => x.Number == _number);
+                    if (scoreExist != null)
+                    {
+                        double total = scoreExist.Score;
+                        scoreExist.Score = _score + total;
+                        JumperList.Remove(thisJumper);
+                    }
+                    else
+                    {
+                        ResultList.Add(new Result(_number, thisJumper.Name, thisJumper.Country, _score));
+                    }
+                }
+            }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
 
         public double countWindEffect(double _criticalPoint, double _windChance1, double _windChance2, double _windChance3, double _windChance4, double _windChance5)
@@ -143,9 +186,18 @@ namespace Ski_Jump_Point_Calculator
         public double countStylePoints(double _stylePoints1, double _stylePoints2, double _stylePoints3, double _stylePoints4, double _stylePoints5)
         {
             List<double> stylePoints = new List<double> { _stylePoints1, _stylePoints2, _stylePoints3, _stylePoints4, _stylePoints5 };
+            for (int i = 0; i < stylePoints.Count; i++)
+            {
+                if (stylePoints[i] < 0 || stylePoints[i] > 20)
+                {
+                    MessageBox.Show("Check given stylepoints. Stylepoint range is between 0 and 20.");
+                    _error = true;
+                }
+            }
+
             stylePoints.Remove(stylePoints.Max());
             stylePoints.Remove(stylePoints.Min());
-            
+
             return stylePoints.Sum();
         }
 

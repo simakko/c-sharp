@@ -1,13 +1,19 @@
-﻿namespace Ski_Jump_Point_Calculator
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ski_Jump_Point_Calculator
 {
-    public class Result
+    public class Score
     {
         private int _number;
         private string _name;
         private string _country;
         private double _score;
 
-        public Result(int number, string name, string country, double score)
+        public Score(int number, string name, string country, double score)
         {
             _number = number;
             _name = name;
@@ -33,7 +39,7 @@
             set { _country = value; }
         }
 
-        public double Score
+        public double Scores
         {
             get { return _score; }
             set { _score = value; }

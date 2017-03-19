@@ -64,40 +64,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Jumper.cs">
+    <Compile Include="Jumper.cs" />
+    <Compile Include="JumperController.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Jumper.Designer.cs">
-      <DependentUpon>Jumper.cs</DependentUpon>
+    <Compile Include="JumperController.Designer.cs">
+      <DependentUpon>JumperController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
+    <Compile Include="MainController.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
+    <Compile Include="MainController.Designer.cs">
+      <DependentUpon>MainController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Points.cs">
+    <Compile Include="PointsController.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Points.Designer.cs">
-      <DependentUpon>Points.cs</DependentUpon>
+    <Compile Include="PointsController.Designer.cs">
+      <DependentUpon>PointsController.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Result.cs">
+    <Compile Include="Result.cs" />
+    <Compile Include="ResultController.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Result.Designer.cs">
-      <DependentUpon>Result.cs</DependentUpon>
+    <Compile Include="ResultController.Designer.cs">
+      <DependentUpon>ResultController.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Jumper.resx">
-      <DependentUpon>Jumper.cs</DependentUpon>
+    <Compile Include="Score.cs" />
+    <EmbeddedResource Include="JumperController.resx">
+      <DependentUpon>JumperController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
+    <EmbeddedResource Include="MainController.resx">
+      <DependentUpon>MainController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Points.resx">
-      <DependentUpon>Points.cs</DependentUpon>
+    <EmbeddedResource Include="PointsController.resx">
+      <DependentUpon>PointsController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -108,8 +111,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Result.resx">
-      <DependentUpon>Result.cs</DependentUpon>
+    <EmbeddedResource Include="ResultController.resx">
+      <DependentUpon>ResultController.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

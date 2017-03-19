@@ -1,63 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Ski_Jump_Point_Calculator
 {
-    public partial class Jumper : UserControl
+    public class Jumper
     {
-        private static Jumper _instance;
+        private int _number;
+        private string _name;
+        private string _country;
 
-        public static Jumper Instance
+        public Jumper(int number, string name, string country)
         {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new Jumper();
-                }
-                return _instance;
-            }
-        }
-        public Jumper()
-        {
-            InitializeComponent();
-
-        }
-        List<Main> jumperList = new List<Main>();
-
-        public List<Main> GiveName()
-        {
-            List<Main> jumpers = (from jumper in jumperList
-                                  orderby jumper.Contestant
-                                  select jumper).ToList();
-            return jumpers;
+            _number = number;
+            _name = name;
+            _country = country;
         }
 
-        private void AddJumperButton_Click(object sender, EventArgs e)
+        public int Number
         {
-            try
-            {
-                int _number = jumperList.Count+1;
-                string _name = nameInput.Text;
-                string _country = countryInput.Text;
-                
-                jumperList.Add(new Main(_number, _name, _country));
-                string[] row = {_number.ToString(), _name, _country };
-                JumperDataGrid.Rows.Add(row);
-                nameInput.Clear();
-                countryInput.Clear();
-            }
-            catch (Exception exception)
-            {
-                Console.WriteLine(exception.Message);
-            }
+            get { return _number; }
+            set { _number = value; }
+        }
+
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+
+        public string Country
+        {
+            get { return _country; }
+            set { _country = value; }
         }
     }
 }

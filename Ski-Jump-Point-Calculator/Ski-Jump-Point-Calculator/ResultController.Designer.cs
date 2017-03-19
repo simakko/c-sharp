@@ -1,6 +1,6 @@
 ﻿namespace Ski_Jump_Point_Calculator
 {
-    partial class Result
+    partial class ResultController
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,48 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridView resultDataGrid;
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.returnGridView2 = new System.Windows.Forms.DataGridView();
             this.colPlacement = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colScore = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            resultDataGrid = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(resultDataGrid)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.returnGridView2)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // resultDataGrid
+            // panel1
             // 
-            resultDataGrid.AllowUserToAddRows = false;
-            resultDataGrid.AllowUserToDeleteRows = false;
-            resultDataGrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            resultDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resultDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resultDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel1.Controls.Add(this.returnGridView2);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(2, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(736, 361);
+            this.panel1.TabIndex = 43;
+            // 
+            // returnGridView2
+            // 
+            this.returnGridView2.AllowUserToAddRows = false;
+            this.returnGridView2.AllowUserToDeleteRows = false;
+            this.returnGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.returnGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.returnGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.returnGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.returnGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colPlacement,
             this.colName,
-            this.colCountry,
-            this.colScore});
-            resultDataGrid.GridColor = System.Drawing.Color.GhostWhite;
-            resultDataGrid.Location = new System.Drawing.Point(134, 110);
-            resultDataGrid.Name = "resultDataGrid";
-            resultDataGrid.ReadOnly = true;
-            resultDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            resultDataGrid.RowHeadersVisible = false;
-            resultDataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            resultDataGrid.Size = new System.Drawing.Size(469, 210);
-            resultDataGrid.TabIndex = 2;
+            this.Column2,
+            this.Column3});
+            this.returnGridView2.EnableHeadersVisualStyles = false;
+            this.returnGridView2.GridColor = System.Drawing.Color.GhostWhite;
+            this.returnGridView2.Location = new System.Drawing.Point(134, 106);
+            this.returnGridView2.Name = "returnGridView2";
+            this.returnGridView2.ReadOnly = true;
+            this.returnGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.returnGridView2.RowHeadersVisible = false;
+            this.returnGridView2.Size = new System.Drawing.Size(469, 210);
+            this.returnGridView2.TabIndex = 39;
             // 
             // colPlacement
             // 
-            this.colPlacement.HeaderText = "Place";
+            this.colPlacement.HeaderText = "Placement";
             this.colPlacement.Name = "colPlacement";
             this.colPlacement.ReadOnly = true;
-            this.colPlacement.Width = 50;
+            this.colPlacement.Width = 80;
             // 
             // colName
             // 
@@ -78,29 +88,19 @@
             this.colName.Name = "colName";
             this.colName.ReadOnly = true;
             // 
-            // colCountry
+            // Column2
             // 
-            this.colCountry.HeaderText = "Country";
-            this.colCountry.Name = "colCountry";
-            this.colCountry.ReadOnly = true;
-            this.colCountry.Width = 150;
+            this.Column2.HeaderText = "Country";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 120;
             // 
-            // colScore
+            // Column3
             // 
-            this.colScore.HeaderText = "Score";
-            this.colScore.Name = "colScore";
-            this.colScore.ReadOnly = true;
-            this.colScore.Width = 50;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(resultDataGrid);
-            this.panel1.Location = new System.Drawing.Point(2, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(736, 361);
-            this.panel1.TabIndex = 43;
+            this.Column3.HeaderText = "Score";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 50;
             // 
             // panel2
             // 
@@ -123,15 +123,15 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "RESULTS";
             // 
-            // Result
+            // ResultController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
-            this.Name = "Result";
+            this.Name = "ResultController";
             this.Size = new System.Drawing.Size(740, 360);
-            ((System.ComponentModel.ISupportInitialize)(resultDataGrid)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.returnGridView2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -143,9 +143,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView returnGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPlacement;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCountry;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colScore;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }
